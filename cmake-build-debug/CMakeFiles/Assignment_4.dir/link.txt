@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Assignment_4.dir/CPU.c.o CMakeFiles/Assignment_4.dir/eye2eh.c.o  -o Assignment_4 

@@ -12,7 +12,7 @@
 /*
 This program does the following.
 1) Creates handlers for two signals.
-2) Create an idle process which will be executed when there is nothing
+2) Creates an idle process which will be executed when there is nothing
    else to do.
 3) Create a send_signals process that sends a SIGALRM every so often.
 
@@ -64,7 +64,7 @@ Add the following functionality.
    c) Restart the idle process to use the rest of the time slice.
 */
 
-#define NUM_SECONDS 2
+#define NUM_SECONDS 20
 #define ever ;;
 
 enum STATE { NEW, RUNNING, WAITING, READY, TERMINATED, EMPTY };
@@ -81,7 +81,7 @@ struct PCB {
 
 typedef enum { false, true } bool;
 
-#define PROCESSTABLESIZE 10
+#define PROCESSTABLESIZE 20
 struct PCB processes[PROCESSTABLESIZE];
 
 struct PCB idle;
@@ -92,9 +92,10 @@ int timer;
 double time_taken;
 struct sigaction alarm_handler;
 struct sigaction child_handler;
-int processes_ready;
-// pid_t fork_process;
 int exit_status;
+int process_counter = 1;
+double length;
+int process_number = 0;
 
 void bad(int signum) {
     WRITESTRING("bad signal: ");
@@ -113,10 +114,15 @@ void(*ISV[32])(int) = {
 
 void ISR (int signum) {
     if (signum != SIGCHLD) {
-        kill (running->pid, SIGSTOP);
+        // WRITESTRING("ISR STOPPING BLOCK >>>>>>>>>>>>>>>>>>>>>>>>>\n")
+
         WRITESTRING("Stopping: ");
+        WRITESTRING(running->name)
+        WRITESTRING(" ")
         WRITEINT(running->pid, 6);
         WRITESTRING("\n");
+        kill (running->pid, SIGSTOP);
+
     }
 
     ISV[signum](signum);
@@ -126,6 +132,7 @@ void send_signals(int signal, int pid, int interval, int number) {
     for(int i = 1; i <= number; i++) {
         sleep(interval);
         WRITESTRING("Sending signal: ");
+        WRITESTRING(" ")
         WRITEINT(signal, 4);
         WRITESTRING(" to process: ");
         WRITEINT(pid, 6);
@@ -155,59 +162,48 @@ void scheduler (int signum) {
     WRITESTRING("---- entering scheduler\n");
     assert(signum == SIGALRM);
 
-    for(int i = 0; i < PROCESSTABLESIZE; i++) {
+    running->state = READY;
+    running->interrupts++;
+    running->switches++;
+    //int process_number = 0;
+    int found_new = 0;
 
-        if(processes[i].name != NULL && processes[i].state == NEW) {
-            processes[i].state = RUNNING;
-            pid_t fork_process = fork();
-            if (fork_process < 0) {
+    while(found_new == 0) {
+
+        if(processes[process_number].state == NEW) {
+
+            found_new = 1;
+            processes[process_number].pid = fork();
+            running = &processes[process_number];
+            if (processes[process_number].pid < 0) {
 
                 perror("fork() error.\n");
                 exit(-1);
-            } else if (fork_process == 0) {
 
+            } else if (processes[process_number].pid == 0) {
 
-                WRITESTRING("FORKED!!!!!!!!!!\n")
-                processes[i].pid = getpid();
-                processes[i].ppid = getppid();
-                processes[i].started = sys_time;
-                exit_status = execl(processes[i].name, processes[i].name, NULL);
+                WRITESTRING("Forking: ")
+                WRITESTRING(processes[process_number].name)
+                WRITESTRING("\n")
+                processes[process_number].ppid = getpid();
+                //processes[process_number].pid = getppid();
+                processes[process_number].started = clock();
+                processes[process_number].state = RUNNING;
+                //WRITESTRING("EXECL STARTING!!!!!!!!!!\n")
+                exit_status = execl(processes[process_number].name, processes[process_number].name, NULL);
                 perror("execl() error.\n");
                 exit(exit_status);
             } else {
 
-                processes[i].interrupts++;
-                processes[i].switches++;
-                processes[i].state = READY;
-                //assert(pause() == 0); // sigchld() auto called
+                sleep(1);
+//                WRITESTRING(" fork/else if/else: RUNNING->NAME = ")
+//                WRITESTRING(running->name)
+//                WRITESTRING(" <<<<<<<<<<<<<<<<<\n")
+                process_number++;
+
             }
         }
     }
-
-//    WRITESTRING("ABOUT TO LOOK FOR READYS,,,,,,,,,,,,,,\n")
-//    processes_ready = 1;
-//    for (int i = 0; i < PROCESSTABLESIZE; i++)
-//    {
-//        if (processes[i].name != NULL) {
-//            WRITESTRING("INSIDE RD_ROBIN_FOR/IF\n")
-//            printf("%u\n", processes[i].state);  //  returns 3/READY
-//            if (processes[i].state == READY)
-//            {
-//                WRITESTRING("LOOKING FOR READY'S??????????????????\n")
-////                assert(kill(running->pid, SIGSTOP) == 0);
-////                errno = 0;
-////                running->state = READY;
-////                running->switches++;
-////                assert(kill(processes[i].pid, SIGCONT) == 0);
-//                processes[i].state = TERMINATED;
-////                running = &processes[i];
-////                running->switches++;
-//
-//            }
-//        }
-//    }
-    processes_ready = 0;
-    WRITESTRING("processes_ready = 0\n")
 
     // new processes go here: 3b
 
@@ -215,34 +211,40 @@ void scheduler (int signum) {
     duration = clock() - duration;
     time_taken = ((double)duration)/CLOCKS_PER_SEC;
 
-    WRITESTRING ("Continuing idle: ");
-    WRITEINT (idle.pid, 6);
-    WRITESTRING ("\n");
-    running = &idle;
-    idle.state = RUNNING;
-    systemcall (kill (idle.pid, SIGCONT));
+//    WRITESTRING ("Continuing idle: ");
+//    WRITEINT (idle.pid, 6);
+//    WRITESTRING ("\n");
+//    running = &idle;
+//    idle.state = RUNNING;
+//    systemcall (kill (idle.pid, SIGCONT));
 
     WRITESTRING("---- leaving scheduler\n");
 }
 
+
 void process_done (int signum) {
+
     WRITESTRING("---- entering process_done\n");
 
-    WRITESTRING("Interrupts: ");
-    WRITEINT(running->interrupts, 2);
-    WRITESTRING("\n");
-    WRITESTRING("Switches: ");
-    WRITEINT(running->switches, 2);
-    WRITESTRING("\n");
-    WRITEINT(time_taken, 9);
-    WRITESTRING(" seconds to execute process.\n")
 
-    running->state = TERMINATED;
+    for(int i = 0; i < PROCESSTABLESIZE; i++) {
+        if(processes[i].name != NULL) {
+            length = clock() - processes[i].started;
+            WRITESTRING("Interrupts: ");
+            WRITEINT(processes[i].interrupts, 2);
+            WRITESTRING("\n");
+            WRITESTRING("Switches: ");
+            WRITEINT(processes[i].switches, 2);
+            WRITESTRING("\n");
+            printf("%f seconds to execute.\n", length/CLOCKS_PER_SEC);
+
+            running->state = TERMINATED;
+        }
+    }
     systemcall(kill (idle.pid, SIGCONT));
     assert (signum == SIGCHLD);
     errno = 0;
 
-    WRITESTRING ("Timer died, cleaning up and killing everything\n");
     WRITESTRING ("---- leaving process_done\n");
     systemcall(kill(0, SIGTERM));
 }
@@ -285,10 +287,13 @@ int main(int argc, char **argv) {
 
     for(int i = 0; i < argc - 1; i++) {
 
-        WRITESTRING("main for loop\n")
-        processes[i].name = argv[i];
+        WRITESTRING("Process ");
+        WRITEINT(process_counter, 2);
+        WRITESTRING(": ")
+        processes[i].name = argv[i + 1];
         processes[i].state = NEW;
         printf("%s\n", processes[i].name);
+        process_counter++;
     }
 
     for(ever) {
