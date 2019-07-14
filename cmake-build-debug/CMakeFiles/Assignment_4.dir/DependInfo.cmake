@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/dominicklicciardi/CLionProjects/Assignment_4/CPU.c" "/Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug/CMakeFiles/Assignment_4.dir/CPU.c.o"
-  "/Users/dominicklicciardi/CLionProjects/Assignment_4/eye2eh.c" "/Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug/CMakeFiles/Assignment_4.dir/eye2eh.c.o"
+  "/Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/CPU.c" "/Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug/CMakeFiles/Assignment_4.dir/CPU.c.o"
+  "/Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/eye2eh.c" "/Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug/CMakeFiles/Assignment_4.dir/eye2eh.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

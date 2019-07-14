@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dominicklicciardi/CLionProjects/Assignment_4
+CMAKE_SOURCE_DIR = /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Assignment_4.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/Assignment_4.dir/flags.make
 
 CMakeFiles/Assignment_4.dir/CPU.c.o: CMakeFiles/Assignment_4.dir/flags.make
 CMakeFiles/Assignment_4.dir/CPU.c.o: ../CPU.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Assignment_4.dir/CPU.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment_4.dir/CPU.c.o   -c /Users/dominicklicciardi/CLionProjects/Assignment_4/CPU.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Assignment_4.dir/CPU.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment_4.dir/CPU.c.o   -c /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/CPU.c
 
 CMakeFiles/Assignment_4.dir/CPU.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment_4.dir/CPU.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dominicklicciardi/CLionProjects/Assignment_4/CPU.c > CMakeFiles/Assignment_4.dir/CPU.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/CPU.c > CMakeFiles/Assignment_4.dir/CPU.c.i
 
 CMakeFiles/Assignment_4.dir/CPU.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment_4.dir/CPU.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dominicklicciardi/CLionProjects/Assignment_4/CPU.c -o CMakeFiles/Assignment_4.dir/CPU.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/CPU.c -o CMakeFiles/Assignment_4.dir/CPU.c.s
 
 CMakeFiles/Assignment_4.dir/eye2eh.c.o: CMakeFiles/Assignment_4.dir/flags.make
 CMakeFiles/Assignment_4.dir/eye2eh.c.o: ../eye2eh.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Assignment_4.dir/eye2eh.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment_4.dir/eye2eh.c.o   -c /Users/dominicklicciardi/CLionProjects/Assignment_4/eye2eh.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Assignment_4.dir/eye2eh.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment_4.dir/eye2eh.c.o   -c /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/eye2eh.c
 
 CMakeFiles/Assignment_4.dir/eye2eh.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment_4.dir/eye2eh.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dominicklicciardi/CLionProjects/Assignment_4/eye2eh.c > CMakeFiles/Assignment_4.dir/eye2eh.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/eye2eh.c > CMakeFiles/Assignment_4.dir/eye2eh.c.i
 
 CMakeFiles/Assignment_4.dir/eye2eh.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment_4.dir/eye2eh.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dominicklicciardi/CLionProjects/Assignment_4/eye2eh.c -o CMakeFiles/Assignment_4.dir/eye2eh.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/eye2eh.c -o CMakeFiles/Assignment_4.dir/eye2eh.c.s
 
 # Object files for target Assignment_4
 Assignment_4_OBJECTS = \
@@ -95,7 +95,7 @@ Assignment_4: CMakeFiles/Assignment_4.dir/CPU.c.o
 Assignment_4: CMakeFiles/Assignment_4.dir/eye2eh.c.o
 Assignment_4: CMakeFiles/Assignment_4.dir/build.make
 Assignment_4: CMakeFiles/Assignment_4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Assignment_4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Assignment_4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Assignment_4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/Assignment_4.dir/clean:
 .PHONY : CMakeFiles/Assignment_4.dir/clean
 
 CMakeFiles/Assignment_4.dir/depend:
-	cd /Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dominicklicciardi/CLionProjects/Assignment_4 /Users/dominicklicciardi/CLionProjects/Assignment_4 /Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug /Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug /Users/dominicklicciardi/CLionProjects/Assignment_4/cmake-build-debug/CMakeFiles/Assignment_4.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug /Users/dominicklicciardi/CLionProjects/CURRENT_ASSIGNMENT/cmake-build-debug/CMakeFiles/Assignment_4.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Assignment_4.dir/depend
 

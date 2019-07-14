@@ -226,10 +226,14 @@ void process_done (int signum) {
 
     WRITESTRING("---- entering process_done\n");
 
+    process_counter = 1;
 
     for(int i = 0; i < PROCESSTABLESIZE; i++) {
         if(processes[i].name != NULL) {
             length = clock() - processes[i].started;
+            WRITESTRING("<<<<<<<<<< Process ");
+            WRITEINT(process_counter, 2);
+            WRITESTRING(": >>>>>>>>>>>>>>\n")
             WRITESTRING("Interrupts: ");
             WRITEINT(processes[i].interrupts, 2);
             WRITESTRING("\n");
@@ -239,6 +243,7 @@ void process_done (int signum) {
             printf("%f seconds to execute.\n", length/CLOCKS_PER_SEC);
 
             running->state = TERMINATED;
+            process_counter++;
         }
     }
     systemcall(kill (idle.pid, SIGCONT));
@@ -247,6 +252,7 @@ void process_done (int signum) {
 
     WRITESTRING ("---- leaving process_done\n");
     systemcall(kill(0, SIGTERM));
+    process_counter = 1;
 }
 
 void boot()
