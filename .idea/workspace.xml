@@ -14,7 +14,6 @@
     <list default="true" id="79b48727-bb3a-4d0d-b35b-c9c188b418c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPU" beforeDir="false" afterPath="$PROJECT_DIR$/CPU" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPU.c" beforeDir="false" afterPath="$PROJECT_DIR$/CPU.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,10 +31,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eye2eh.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="85">
+              <caret line="5" column="14" selection-end-line="86" selection-end-column="6" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#1123#2425#0" expanded="true" />
               </folding>
             </state>
@@ -45,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CPU.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="332" column="16" lean-forward="true" selection-end-line="334" selection-end-column="1" />
+            <state relative-caret-position="1313">
+              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -66,10 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/systemcall.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-126">
+              <caret selection-end-line="22" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -117,9 +113,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/eye2eh.c" />
-        <option value="$PROJECT_DIR$/systemcall.h" />
         <option value="$PROJECT_DIR$/count2five.sh" />
         <option value="$PROJECT_DIR$/CPU.c" />
+        <option value="$PROJECT_DIR$/systemcall.h" />
       </list>
     </option>
   </component>
@@ -127,9 +123,8 @@
     <option name="directoryName" value="llkbudKW" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
     <option name="y" value="23" />
-    <option name="width" value="1084" />
+    <option name="width" value="689" />
     <option name="height" value="863" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -137,7 +132,24 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Assignment_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CURRENT_ASSIGNMENT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -186,7 +198,8 @@
       <workItem from="1563077881306" duration="1548000" />
       <workItem from="1563217453442" duration="101000" />
       <workItem from="1563217567639" duration="20491000" />
-      <workItem from="1563383937399" duration="4262000" />
+      <workItem from="1563383937399" duration="5196000" />
+      <workItem from="1563397329075" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="testing initial addition">
       <created>1562902743462</created>
@@ -199,13 +212,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88923000" />
+    <option name="totallyTimeSpent" value="90153000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="23" width="734" height="863" extended-state="0" />
+    <frame x="5" y="23" width="689" height="863" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18441558" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32457495" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -216,7 +229,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.48119324" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.48119324" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3299363" />
       <window_info anchor="bottom" id="CMake" order="11" />
@@ -274,10 +287,9 @@
     <entry file="file://$USER_HOME$/Downloads/count2five.sh" />
     <entry file="file://$PROJECT_DIR$/eye2eh.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="85">
+          <caret line="5" column="14" selection-end-line="86" selection-end-column="6" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
             <element signature="e#1123#2425#0" expanded="true" />
           </folding>
         </state>
@@ -292,17 +304,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/systemcall.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-126">
+          <caret selection-end-line="22" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPU.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="332" column="16" lean-forward="true" selection-end-line="334" selection-end-column="1" />
+        <state relative-caret-position="1313">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
