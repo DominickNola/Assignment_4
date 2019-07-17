@@ -129,7 +129,7 @@ void ISR (int signum) {
 
 void send_signals(int signal, int pid, int interval, int number) {
 
-    for(int i = 1; i <= number; i++) {
+    for(int i =1; i <= number; i++) {
 
         assert(sleep(interval) == 0);
         WRITESTRING("Sending signal: ");
